@@ -1,8 +1,14 @@
-//create a way to play again
-//Model code
 
+//$('#container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 1000);
 $(document).ready(function(){
-	$('#container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 1000);
+	$(document).keydown(function(event){
+
+if (event.which === 89)
+{
+	alert("Yes");
+}
+
+});
 });
 
 /*

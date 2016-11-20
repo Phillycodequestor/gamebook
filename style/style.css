@@ -5,6 +5,7 @@ body {
 
 
 #container{
+display: flex;
 height: auto;
 /*outline: .5px solid black;*/
 max-width: 600px;
