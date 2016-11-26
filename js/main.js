@@ -1,15 +1,6 @@
 
 //$('#container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 1000);
-$(document).ready(function(){
-	$(document).keydown(function(event){
 
-if (event.which === 89)
-{
-	alert("Yes");
-}
-
-});
-});
 
 /*
 function Evildoer(name) {
@@ -132,32 +123,30 @@ darthpence.fightsyou = function() {
 
 	};
 
-
-
+*/
 	
 
 
-//Controller code
+
+$(document).ready(function(){
 
 function newGame () {
-	var agreetoplay = prompt("A long time ago in a galaxy far far away ... \nDarth Trump threatened to smash the rebellion and rule the galaxy if he got elected. His second in command, Darth Pence, along with Christie the Hutt, kidnapped Princess Hillarleia. Your mission is to rescue the princess and convince a voter not to support Darth Trump, saving the galaxy from his evil clutches. Do you accept this mission? Answer Y or N.");
-	
-	//START HERE: Check if you need !=null, also remove unnecessary code above
-	if (agreetoplay === "Y" ||  agreetoplay === "y") {
-	darthpence.fightsyou();
+	$(document).keydown(function(event){
+	if (event.which === 89) {
+	$(".container").fadeOut(4000);
 	}
-	else if (agreetoplay === "n" || agreetoplay === "N") {
+	else if (event.which === 78) {
 	alert("OK, Click refresh when you are ready, Young Jedi.");
 	}
 	else {
 	alert("You must answer Y or N. Try again.")
 	newGame();
 	}
-
+});
 };
 
-
 newGame();
-*/
+
+});
 
 
