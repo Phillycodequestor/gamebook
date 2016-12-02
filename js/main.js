@@ -1,5 +1,6 @@
+//next: call the fightdarthpence function from new game()
 
-//$('#container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 1000);
+//$('.container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 1000);
 
 
 /*
@@ -124,16 +125,28 @@ darthpence.fightsyou = function() {
 	};
 
 */
-	
+$(document).ready(function(){	
+
+function Evildoer(name) {
+this.name = name;
+}
+var darthpence = new Evildoer("Darth Pence");
+
+darthpence.fightsyou = function() {
+	$(document).keydown(function(event){
+if(event.which === 89) {
+	alert("y");
+}
+	});
+};
 
 
 
-$(document).ready(function(){
 
 function newGame () {
 	$(document).keydown(function(event){
 	if (event.which === 89) {
-	$(".container").fadeOut(4000);
+	$(".container").fadeOut(1000);
 	}
 	else if (event.which === 78) {
 	alert("OK, Click refresh when you are ready, Young Jedi.");
