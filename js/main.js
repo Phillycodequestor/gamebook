@@ -1,4 +1,4 @@
-//next: call the fightdarthpence function from new game()
+//next: second text box not fading in properly, other one not out of the way in time and then it fades out.
 
 //$('.container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 1000);
 
@@ -133,6 +133,7 @@ this.name = name;
 var darthpence = new Evildoer("Darth Pence");
 
 darthpence.fightsyou = function() {
+	$('#text2').fadeIn(1000);
 	$(document).keydown(function(event){
 if(event.which === 89) {
 	alert("y");
@@ -146,7 +147,7 @@ if(event.which === 89) {
 function newGame () {
 	$(document).keydown(function(event){
 	if (event.which === 89) {
-	$(".container").fadeOut(1000);
+	$(".container").fadeOut(1000, darthpence.fightsyou());
 	}
 	else if (event.which === 78) {
 	alert("OK, Click refresh when you are ready, Young Jedi.");
