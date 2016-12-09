@@ -5,14 +5,12 @@ body {
 
 
 .container{
-display: flex;
 height: auto;
-/*outline: .5px solid black;*/
 max-width: 600px;
-margin: 0 auto;
-justify-content: center;
+margin: 10px auto;
 background-color: white;
-
+padding-top: 10px;
+padding-bottom: 10px;
 }
 
 #text2{
@@ -20,18 +18,18 @@ display: none;
 } 
 
  p {
-/*outline: .5px solid black;*/
+outline: .5px solid black;
 width: 80%;
 font-size: 1.25em;
+margin-right: auto;
+margin-left: auto;
 }
 
 #photo {
 display: flex;
 height: 300px;
-/*outline: .5px solid black;*/
 max-width: 600px;
 margin: 0 auto;
-margin-top: 20px;
 background: url(http://i650.photobucket.com/albums/uu221/Matt_Zager/trumpvader_zpsrutznl9v.jpg);
 background-size: 100%;
 background-repeat: no-repeat;
