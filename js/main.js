@@ -68,21 +68,23 @@ voter.decides = function() {
 	
 };
 
-
+*/
 //Challenges you to fight Darth Pence
 darthpence.fightsyou = function() {
-	var fightdarthpence = prompt("You have entered the hideout of Christie the Hutt. Christie issues a challenge: He will release Princess Hillarleia if you win a light-saber fight with Darth Pence. If you opt not to fight, Darth Trump could choose not to challenge you later, since the princess isn't free, and you will automatically lose.\nWill you fight Darth Pence? Answer Y or N.");
 	var fighting = true;
-	if (fightdarthpence === "Y" || fightdarthpence === "y"){
 	while (fighting){
 		var number = Math.floor((Math.random() * 10) + 1);
 		if (number < 4){
-			alert("Darth Pence kills you. Darth Trump wins the election. Congratulations, you let down the universe. Click OK, even though you can't because you're dead.");
+			$('#text2').fadeOut(1000, function(){
+				$('#text3').delay(800).fadeIn(1000);
+			});
 			fighting = false;
 			newGame();
 		}
 		else if (number > 3  && number < 8){
-			alert("Congratulations, you killed Darth Pence.");
+			$('text3').fadeOut(1000, function(){
+				$('text4').delay(800).fadeIn(1000);
+			});
 			princess.free = true;
 			fighting = false;
 			darthtrump.showdown(); 
@@ -90,11 +92,16 @@ darthpence.fightsyou = function() {
 		else {   
 			var fightprogresses = true;
 			while(fightprogresses){
-			var keepplaying = prompt("Pence continues to put up a tough fight. You can retreat, although the princess won't go free, decreasing your chances of defeating Darth Trump later. Do you want to keep fighting? Answer Y or N.");
-			if(keepplaying === "Y" || keepplaying === "y") {
+			
+			$(document).keydown(function(event){
+				if(event.which === 89){
 				fightprogresses = false;
-				alert("You are brave. Click OK and fight on.");
+				$('#text5').fadeOut(1000, function(){
+					$('#text6').delay(800).fadeIn(1000);
+				});
 			}
+			
+			//START HERE
 			else if (keepplaying === "n" || keepplaying === "N") {
 				fightprogresses = false;
 				alert("You have potentially let down the rebellion. Continue on to attempt to defeat Darth Trump. Click OK.");
@@ -104,11 +111,12 @@ darthpence.fightsyou = function() {
 			else {
 				alert("You must answer Y or N.")
 				}
+			});
 		}
 		
 		}
 	}	
-	}
+	
 	
 	else if (fightdarthpence === "N" || fightdarthpence === "n"){
 		alert("You have potentially let down the rebellion. Continue on to attempt to defeat Darth Trump. Click OK.");
@@ -124,7 +132,7 @@ darthpence.fightsyou = function() {
 
 	};
 
-*/
+
 $(document).ready(function(){	
 
 function Evildoer(name) {
@@ -136,7 +144,7 @@ darthpence.fightsyou = function() {
 	
 	$(document).keydown(function(event){
 if(event.which === 89) {
-	alert("y");
+	
 }
 	});
 };
@@ -150,7 +158,7 @@ function newGame () {
 	$('#text1').fadeOut(1000, function(){
 	$('#text2').delay(800).fadeIn(1000);
 	});
-	//darthpence.fightsyou();
+	darthpence.fightsyou();
 	}
 	else if (event.which === 78) {
 	alert("OK, Click refresh when you are ready, Young Jedi.");

@@ -13,12 +13,13 @@ padding-top: 10px;
 padding-bottom: 10px;
 }
 
-#text2{
+.hide{
 display: none;
-} 
+}
+
+
 
  p {
-outline: .5px solid black;
 width: 80%;
 font-size: 1.25em;
 margin-right: auto;
