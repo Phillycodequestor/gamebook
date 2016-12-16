@@ -75,44 +75,46 @@ darthpence.fightsyou = function() {
 	while (fighting){
 		var number = Math.floor((Math.random() * 10) + 1);
 		if (number < 4){
-			$('#text2').fadeOut(1000, function(){
+			
 				$('#text3').delay(800).fadeIn(1000);
-			});
+			
 			fighting = false;
 			newGame();
 		}
 		else if (number > 3  && number < 8){
-			$('text3').fadeOut(1000, function(){
+			
 				$('text4').delay(800).fadeIn(1000);
 			});
 			princess.free = true;
 			fighting = false;
 			darthtrump.showdown(); 
 		}
-		else {   
+		//gives you option to retreat
+		
+		else {
+			$('#text5').delay(800).fadeIn(1000);   
 			var fightprogresses = true;
 			while(fightprogresses){
 			
 			$(document).keydown(function(event){
 				if(event.which === 89){
+				$('#text5').delay(800).fadeOut(1000);
 				fightprogresses = false;
-				$('#text5').fadeOut(1000, function(){
-					$('#text6').delay(800).fadeIn(1000);
-				});
-			}
+				}
 			
-			//START HERE
-			else if (keepplaying === "n" || keepplaying === "N") {
+			
+			
+			else if (event.which === 78) {
 				fightprogresses = false;
-				alert("You have potentially let down the rebellion. Continue on to attempt to defeat Darth Trump. Click OK.");
+			//start here: make text6 fade in and out
 				fighting = false;
 				darthtrump.showdown();
 			}
 			else {
 				alert("You must answer Y or N.")
 				}
-			});
-		}
+			
+		});
 		
 		}
 	}	
@@ -144,7 +146,7 @@ darthpence.fightsyou = function() {
 	
 	$(document).keydown(function(event){
 if(event.which === 89) {
-	
+	$('#text2').fadeOut(1000);
 }
 	});
 };
@@ -153,6 +155,7 @@ if(event.which === 89) {
 
 
 function newGame () {
+	$('#text1').fadeIn(1000);
 	$(document).keydown(function(event){
 	if (event.which === 89) {
 	$('#text1').fadeOut(1000, function(){
