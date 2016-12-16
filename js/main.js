@@ -90,8 +90,7 @@ darthpence.fightsyou = function() {
 			darthtrump.showdown(); 
 		}
 		//gives you option to retreat
-		
-		else {
+			else {
 			$('#text5').delay(800).fadeIn(1000);   
 			var fightprogresses = true;
 			while(fightprogresses){
@@ -102,12 +101,10 @@ darthpence.fightsyou = function() {
 				fightprogresses = false;
 				}
 			
-			
-			
 			else if (event.which === 78) {
 				fightprogresses = false;
-			//start here: make text6 fade in and out
 				fighting = false;
+			$('#text6').delay(800).fadeIn(1000);
 				darthtrump.showdown();
 			}
 			else {
@@ -119,16 +116,15 @@ darthpence.fightsyou = function() {
 		}
 	}	
 	
-	
-	else if (fightdarthpence === "N" || fightdarthpence === "n"){
-		alert("You have potentially let down the rebellion. Continue on to attempt to defeat Darth Trump. Click OK.");
-		fighting = false;
-		
-		darthtrump.showdown();
+	//Start here: do these need to be part of the loop? message should repeat if you haven't answered y or n.
+	else if (event.which === 78) {
+			fighting = false;
+			$('#text6').delay(800).fadeIn(1000);
+			darthtrump.showdown();
 	}
 
 	else {
-		alert("You must answer Y or no. N.");
+		alert("You must answer Y or N.");
 		darthpence.fightsyou();
 	}
 
