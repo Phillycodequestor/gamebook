@@ -75,20 +75,17 @@ darthpence.fightsyou = function() {
 	while (fighting){
 		var number = Math.floor((Math.random() * 10) + 1);
 		if (number < 4){
-			
-				$('#text3').delay(800).fadeIn(1000);
-			
+			$('#text3').delay(800).fadeIn(1000);
 			fighting = false;
 			newGame();
-		}
-		else if (number > 3  && number < 8){
-			
-				$('text4').delay(800).fadeIn(1000);
-			});
+						}
+		else if (number > 3  && number < 8) {
+			$('text4').delay(800).fadeIn(1000);
 			princess.free = true;
 			fighting = false;
-			darthtrump.showdown(); 
-		}
+			darthtrump.showdown();
+												}); 
+		
 		//gives you option to retreat
 			else {
 			$('#text5').delay(800).fadeIn(1000);   
@@ -110,13 +107,17 @@ darthpence.fightsyou = function() {
 			else {
 				alert("You must answer Y or N.")
 				}
-			
-		});
-		
-		}
-	}	
+
+			});
+			};
+
+			}
+
+};					
 	
-	//Start here: do these need to be part of the loop? message should repeat if you haven't answered y or n.
+	
+	
+//if player chooses not to fight Pence
 	else if (event.which === 78) {
 			fighting = false;
 			$('#text6').delay(800).fadeIn(1000);
@@ -128,9 +129,10 @@ darthpence.fightsyou = function() {
 		darthpence.fightsyou();
 	}
 
-	};
 
+};
 
+//start here: merge this code with block above
 $(document).ready(function(){	
 
 function Evildoer(name) {
@@ -143,9 +145,11 @@ darthpence.fightsyou = function() {
 	$(document).keydown(function(event){
 if(event.which === 89) {
 	$('#text2').fadeOut(1000);
-}
-	});
-};
+						
+						}
+											});
+									
+									};
 
 
 
