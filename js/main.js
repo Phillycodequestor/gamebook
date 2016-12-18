@@ -69,8 +69,18 @@ voter.decides = function() {
 };
 
 */
-//Challenges you to fight Darth Pence
+$(document).ready(function(){
+
+function Evildoer(name) {
+this.name = name;
+}
+var darthpence = new Evildoer("Darth Pence");
+//start here: make sure fight function works
+//CHALLENGES YOU TO FIGHT DARTH PENCE
 darthpence.fightsyou = function() {
+	$(document).keydown(function(event){
+	if(event.which === 89) {
+	$('#text2').fadeOut(1000);
 	var fighting = true;
 	while (fighting){
 		var number = Math.floor((Math.random() * 10) + 1);
@@ -114,7 +124,7 @@ darthpence.fightsyou = function() {
 			}
 
 };					
-	
+}	
 	
 	
 //if player chooses not to fight Pence
@@ -129,31 +139,11 @@ darthpence.fightsyou = function() {
 		darthpence.fightsyou();
 	}
 
-
+};
 };
 
-//start here: merge this code with block above
-$(document).ready(function(){	
-
-function Evildoer(name) {
-this.name = name;
-}
-var darthpence = new Evildoer("Darth Pence");
-
-darthpence.fightsyou = function() {
-	
-	$(document).keydown(function(event){
-if(event.which === 89) {
-	$('#text2').fadeOut(1000);
-						
-						}
-											});
-									
-									};
-
-
-
-
+										
+//LAUNCHES GAME, TELLS YOU MAIN PLOT
 function newGame () {
 	$('#text1').fadeIn(1000);
 	$(document).keydown(function(event){
