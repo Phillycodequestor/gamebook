@@ -75,11 +75,13 @@ function Evildoer(name) {
 this.name = name;
 }
 var darthpence = new Evildoer("Darth Pence");
-//start here: make sure fight function works
+
 //CHALLENGES YOU TO FIGHT DARTH PENCE
 darthpence.fightsyou = function() {
-	$(document).keydown(function(event){
+	
+$(document).keydown(function(event){
 	if(event.which === 89) {
+		//START HERE: NOT FADING OUT FAST ENOUGH
 	$('#text2').fadeOut(1000);
 	var fighting = true;
 	while (fighting){
@@ -87,14 +89,14 @@ darthpence.fightsyou = function() {
 		if (number < 4){
 			$('#text3').delay(800).fadeIn(1000);
 			fighting = false;
-			newGame();
+			
 						}
 		else if (number > 3  && number < 8) {
-			$('text4').delay(800).fadeIn(1000);
+			$('#text4').delay(800).fadeIn(1000);
 			princess.free = true;
 			fighting = false;
-			darthtrump.showdown();
-												}); 
+			//darthtrump.showdown();
+												} 
 		
 		//gives you option to retreat
 			else {
@@ -112,7 +114,7 @@ darthpence.fightsyou = function() {
 				fightprogresses = false;
 				fighting = false;
 			$('#text6').delay(800).fadeIn(1000);
-				darthtrump.showdown();
+//THESE NEED TO RETURN//darthtrump.showdown();
 			}
 			else {
 				alert("You must answer Y or N.")
@@ -131,15 +133,15 @@ darthpence.fightsyou = function() {
 	else if (event.which === 78) {
 			fighting = false;
 			$('#text6').delay(800).fadeIn(1000);
-			darthtrump.showdown();
+			//darthtrump.showdown();
 	}
 
 	else {
 		alert("You must answer Y or N.");
-		darthpence.fightsyou();
+		//darthpence.fightsyou();
 	}
 
-};
+});
 };
 
 										
@@ -150,8 +152,9 @@ function newGame () {
 	if (event.which === 89) {
 	$('#text1').fadeOut(1000, function(){
 	$('#text2').delay(800).fadeIn(1000);
-	});
+});
 	darthpence.fightsyou();
+	
 	}
 	else if (event.which === 78) {
 	alert("OK, Click refresh when you are ready, Young Jedi.");
