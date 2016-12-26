@@ -81,23 +81,27 @@ darthpence.fightsyou = function() {
 	
 $(document).keydown(function(event){
 	if(event.which === 89) {
-		//START HERE: NOT FADING OUT FAST ENOUGH
-	$('#text2').fadeOut(1000);
+		
+	
 	var fighting = true;
 	while (fighting){
 		var number = Math.floor((Math.random() * 10) + 1);
 		if (number < 4){
+			$('#text2').fadeOut(1000, function(){
 			$('#text3').delay(800).fadeIn(1000);
+			});
 			fighting = false;
 			
 						}
 		else if (number > 3  && number < 8) {
+			$('#text2').fadeOut(1000, function(){
 			$('#text4').delay(800).fadeIn(1000);
+		});
 			princess.free = true;
 			fighting = false;
 			//darthtrump.showdown();
 												} 
-		
+		//START HERE: PROGRAM SEIZES WITH THIS OPTION
 		//gives you option to retreat
 			else {
 			$('#text5').delay(800).fadeIn(1000);   
