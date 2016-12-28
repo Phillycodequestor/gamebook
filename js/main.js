@@ -81,8 +81,6 @@ darthpence.fightsyou = function() {
 	
 $(document).keydown(function(event){
 	if(event.which === 89) {
-		
-	
 	var fighting = true;
 	while (fighting){
 		var number = Math.floor((Math.random() * 10) + 1);
@@ -91,8 +89,7 @@ $(document).keydown(function(event){
 			$('#text3').delay(800).fadeIn(1000);
 			});
 			fighting = false;
-			
-						}
+			}
 		else if (number > 3  && number < 8) {
 			$('#text2').fadeOut(1000, function(){
 			$('#text4').delay(800).fadeIn(1000);
@@ -101,10 +98,13 @@ $(document).keydown(function(event){
 			fighting = false;
 			//darthtrump.showdown();
 												} 
-		//START HERE: PROGRAM SEIZES WITH THIS OPTION
+		//START HERE: why this message and one above it both appearing?
 		//gives you option to retreat
 			else {
-			$('#text5').delay(800).fadeIn(1000);   
+			$('#text2').fadeOut(1000, function(){
+			$('#text5').delay(800).fadeIn(1000);
+		});   
+/*
 			var fightprogresses = true;
 			while(fightprogresses){
 			
@@ -126,7 +126,7 @@ $(document).keydown(function(event){
 
 			});
 			};
-
+*/
 			}
 
 };					
