@@ -104,7 +104,7 @@ $(document).keydown(function(event){
 			$('#text2').fadeOut(1000, function(){
 			$('#text5').delay(800).fadeIn(1000);
 		});   
-/*
+
 			var fightprogresses = true;
 			while(fightprogresses){
 			
@@ -112,6 +112,7 @@ $(document).keydown(function(event){
 				if(event.which === 89){
 				$('#text5').delay(800).fadeOut(1000);
 				fightprogresses = false;
+				//START HERE: THIS OPTION REPEATS FIRST LOOP, BUT #TEXT 2 NOT DISPLAYED
 				}
 			
 			else if (event.which === 78) {
@@ -126,7 +127,7 @@ $(document).keydown(function(event){
 
 			});
 			};
-*/
+
 			}
 
 };					
