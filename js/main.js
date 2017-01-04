@@ -81,29 +81,29 @@ darthpence.fightsyou = function() {
 	
 $(document).keydown(function(event){
 	if(event.which === 89) {
+		//START HERE: WHY TEXT FADING IN AT THE END
+		$('#text2').css("display", "none");
 	var fighting = true;
 	while (fighting){
 		var number = Math.floor((Math.random() * 10) + 1);
 		if (number < 4){
-			$('#text2').fadeOut(1000, function(){
 			$('#text3').delay(800).fadeIn(1000);
-			});
 			fighting = false;
 			}
 		else if (number > 3  && number < 8) {
-			$('#text2').fadeOut(1000, function(){
+			
 			$('#text4').delay(800).fadeIn(1000);
-		});
-			princess.free = true;
+		
+			//princess.free = true;
 			fighting = false;
 			//darthtrump.showdown();
 												} 
-		//START HERE: why this message and one above it both appearing?
+		
 		//gives you option to retreat
 			else {
-			$('#text2').fadeOut(1000, function(){
+			
 			$('#text5').delay(800).fadeIn(1000);
-		});   
+		   
 
 			var fightprogresses = true;
 			while(fightprogresses){
@@ -112,7 +112,7 @@ $(document).keydown(function(event){
 				if(event.which === 89){
 				$('#text5').delay(800).fadeOut(1000);
 				fightprogresses = false;
-				//START HERE: THIS OPTION REPEATS FIRST LOOP, BUT #TEXT 2 NOT DISPLAYED
+				
 				}
 			
 			else if (event.which === 78) {
@@ -152,6 +152,7 @@ $(document).keydown(function(event){
 										
 //LAUNCHES GAME, TELLS YOU MAIN PLOT
 function newGame () {
+
 	$('#text1').fadeIn(1000);
 	$(document).keydown(function(event){
 	if (event.which === 89) {
