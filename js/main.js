@@ -85,7 +85,7 @@ $(document).keydown(function(event){
 		$('#text2').fadeOut('fast');
 	var fighting = true;
 	while (fighting){
-		var number = Math.floor((Math.random() * 10) + 1);
+		
 		if (number < 4){
 			$('#text3').delay(800).fadeIn(4000);
 			fighting = false;
@@ -94,11 +94,11 @@ $(document).keydown(function(event){
 			
 			$('#text4').delay(800).fadeIn(4000);
 		
-			//princess.free = true;
+			princess.free = true;
 			fighting = false;
 			//darthtrump.showdown();
 												} 
-		//START HERE: Looks like it breaks with this option
+		
 		//gives you option to retreat
 			else {
 			
