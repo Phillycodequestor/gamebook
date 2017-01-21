@@ -75,90 +75,102 @@ function Evildoer(name) {
 this.name = name;
 }
 var darthpence = new Evildoer("Darth Pence");
+var keepfighting
+var yesOrno
 
-//CHALLENGES YOU TO FIGHT DARTH PENCE
-darthpence.fightsyou = function() {
-	
-$(document).keydown(function(event){
-	if(event.which === 89) {
-		
-		$('#text2').fadeOut('fast');
-	var fighting = true;
-	while (fighting){
-		
-		if (number < 4){
-			$('#text3').delay(800).fadeIn(4000);
-			fighting = false;
-			}
-		else if (number > 3  && number < 8) {
-			
-			$('#text4').delay(800).fadeIn(4000);
-		
-			princess.free = true;
-			fighting = false;
-			//darthtrump.showdown();
-												} 
-		
-		//gives you option to retreat
-			else {
-			
-			$('#text5').delay(800).fadeIn(4000);
-		   
 
-			var fightprogresses = true;
-			while(fightprogresses){
-			
-			$(document).keydown(function(event){
-				if(event.which === 89){
-				$('#text5').delay(800).fadeOut(1000);
-				fightprogresses = false;
-				
-				}
-			
-			else if (event.which === 78) {
-				fightprogresses = false;
-				fighting = false;
-			$('#text6').delay(800).fadeIn(1000);
-//THESE NEED TO RETURN//darthtrump.showdown();
-			}
-			else {
-				alert("You must answer Y or N.")
-				}
 
-			});
-			};
+//asks player if he'll fight; initiates the duel
+darthpence.fightsyou = function(){
+yesOrno = key(); //START HERE: KEY FUNCTION NOT WAITING FOR ME TO PICK Y OR N
 
-			}
-
-};					
-}	
-	
-	
-//if player chooses not to fight Pence
-	else if (event.which === 78) {
-			fighting = false;
-			$('#text6').delay(800).fadeIn(1000);
-			//darthtrump.showdown();
-	}
-
-	else {
-		alert("You must answer Y or N.");
-		//darthpence.fightsyou();
-	}
-
+//PLAYER PICKS Y********
+/*
+if(yesOrno) {
+$('#text2').fadeOut('fast');
+fightoutcome();
+}
+//PLAYER PICKS N*********
+else {
+$('#text2').hide(function(){
+$('#text6').fadeIn(4000);
 });
+//darthtrump.showdown();
+}
+*/
 };
 
-										
+//calls randomizer, tells you if you won, lost, have option to retreat (calls fightorflight())
+var fightoutcome = function(){
+while(keepfighting){
+var number = randomizer();
+//PLAYER LOSES DUEL
+if (number < 4){
+playerloses();
+}
+//PLAYER WINS DUEL
+else if (number > 3  && number < 8) {
+$('#text4').delay(800).fadeIn(4000);
+princess.free = true;
+keepfighting = false;
+}
+//PLAYER GIVEN OPTION TO RETREAT
+else {
+$('#text5').delay(800).fadeIn(4000);
+keepfighting = fightorflight();
+}
+}
+darthtrump.showdown();
+};
+
+//returns true or false to fightoutcome based on whether player chooses to keep fighting
+var fightorflight = function() {
+if(key()){
+return true;
+}
+else {
+$('#text5').hide(function(){
+$('#text6').fadeIn(4000);
+});
+return false;
+}
+}; 
+
+//code to pick random number, returns it to fightoutcome function,
+var randomizer = function() {
+return Math.floor((Math.random() * 10) + 1);
+};
+
+var playerloses = function() {
+$('#text3').delay(800).fadeIn(4000);
+};
+
+//returns true or false based on key pressed
+var key = function() {
+
+/*$(document).keydown(function(event){
+if(event.which === 89){
+return true;
+}
+else if (event.which === 78){
+return false;
+}
+else {
+alert("You must answer Y or N.")
+}
+});
+*/
+};
+
 //LAUNCHES GAME, TELLS YOU MAIN PLOT
 function newGame () {
 
 	$('#text1').fadeIn(1000);
 	$(document).keydown(function(event){
 	if (event.which === 89) {
-	$('#text1').fadeOut(1000, function(){
-	$('#text2').delay(800).fadeIn(1000);
-});
+$('#text1').hide();
+$('#text2').fadeIn(4000);
+
 	darthpence.fightsyou();
 	
 	}
