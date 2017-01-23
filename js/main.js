@@ -82,13 +82,14 @@ var yesOrno
 
 //asks player if he'll fight; initiates the duel
 darthpence.fightsyou = function(){
-yesOrno = key(); //START HERE: KEY FUNCTION NOT WAITING FOR ME TO PICK Y OR N
+ //START HERE: Is key() returning value?
+ key();
 
 //PLAYER PICKS Y********
 /*
-if(yesOrno) {
+if(key()) {
 $('#text2').fadeOut('fast');
-fightoutcome();
+//fightoutcome();
 }
 //PLAYER PICKS N*********
 else {
@@ -147,8 +148,8 @@ $('#text3').delay(800).fadeIn(4000);
 
 //returns true or false based on key pressed
 var key = function() {
-
-/*$(document).keydown(function(event){
+$(document).on('keydown', function(){
+$(document).keydown(function(event){
 if(event.which === 89){
 return true;
 }
@@ -159,7 +160,7 @@ else {
 alert("You must answer Y or N.")
 }
 });
-*/
+});
 };
 
 //LAUNCHES GAME, TELLS YOU MAIN PLOT
