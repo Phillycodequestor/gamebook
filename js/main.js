@@ -1,5 +1,3 @@
-//next: why isn't the callback working?
-
 //$('.container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 1000);
 
 
@@ -70,24 +68,17 @@ voter.decides = function() {
 
 */
 $(document).ready(function(){
-
+/*
 function Evildoer(name) {
 this.name = name;
 }
 var darthpence = new Evildoer("Darth Pence");
 var keepfighting
-var yesOrno
-
-
-
+*/
+/*
 //asks player if he'll fight; initiates the duel
 darthpence.fightsyou = function(){
- //START HERE: Is key() returning value?
- key();
-
-//PLAYER PICKS Y********
-/*
-if(key()) {
+if(radio()) {
 $('#text2').fadeOut('fast');
 //fightoutcome();
 }
@@ -98,9 +89,34 @@ $('#text6').fadeIn(4000);
 });
 //darthtrump.showdown();
 }
+};
 */
+
+//returns true or false based on button chosen
+var radio = function() {
+var x = document.getElementById("radio1").checked;
+if(x){
+return true;
+}
+else {
+return false;
+}
 };
 
+//LAUNCHES GAME, TELLS YOU MAIN PLOT
+function newGame () {
+$('input[type=radio]').click(function(){
+if (radio() {
+$('#text1').hide();
+$('#text2').fadeIn(4000);
+//darthpence.fightsyou();
+}
+else  {
+alert("OK, Click refresh when you are ready, Young Jedi.");
+}
+});
+};
+/*
 //calls randomizer, tells you if you won, lost, have option to retreat (calls fightorflight())
 var fightoutcome = function(){
 while(keepfighting){
@@ -121,22 +137,10 @@ $('#text5').delay(800).fadeIn(4000);
 keepfighting = fightorflight();
 }
 }
-darthtrump.showdown();
+//darthtrump.showdown();
 };
-
-//returns true or false to fightoutcome based on whether player chooses to keep fighting
-var fightorflight = function() {
-if(key()){
-return true;
-}
-else {
-$('#text5').hide(function(){
-$('#text6').fadeIn(4000);
-});
-return false;
-}
-}; 
-
+*/
+/*
 //code to pick random number, returns it to fightoutcome function,
 var randomizer = function() {
 return Math.floor((Math.random() * 10) + 1);
@@ -146,45 +150,19 @@ var playerloses = function() {
 $('#text3').delay(800).fadeIn(4000);
 };
 
-//returns true or false based on key pressed
-var key = function() {
-$(document).on('keydown', function(){
-$(document).keydown(function(event){
-if(event.which === 89){
+//returns true or false to fightoutcome based on whether player chooses to keep fighting
+var fightorflight = function() {
+if(radio()){
 return true;
 }
-else if (event.which === 78){
+else {
+$('#text5').hide(function(){
+$('#text6').fadeIn(4000);
+});
 return false;
 }
-else {
-alert("You must answer Y or N.")
-}
-});
-});
-};
-
-//LAUNCHES GAME, TELLS YOU MAIN PLOT
-function newGame () {
-
-	$('#text1').fadeIn(1000);
-	$(document).keydown(function(event){
-	if (event.which === 89) {
-$('#text1').hide();
-$('#text2').fadeIn(4000);
-
-	darthpence.fightsyou();
-	
-	}
-	else if (event.which === 78) {
-	alert("OK, Click refresh when you are ready, Young Jedi.");
-	}
-	else {
-	alert("You must answer Y or N. Try again.")
-	newGame();
-	}
-});
-};
-
+}; 
+*/
 newGame();
 
 });
