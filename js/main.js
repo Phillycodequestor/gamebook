@@ -93,8 +93,9 @@ $('#text6').fadeIn(4000);
 */
 
 //returns true or false based on button chosen
-var radio = function() {
-var x = document.getElementById("radio1").checked;
+var radio = function(key) {
+var buttonId = key;
+var x = document.getElementById(buttonId).checked;
 if(x){
 return true;
 }
@@ -106,7 +107,7 @@ return false;
 //LAUNCHES GAME, TELLS YOU MAIN PLOT
 function newGame () {
 $('input[type=radio]').click(function(){
-if (radio() {
+if (radio('radio1')) {
 $('#text1').hide();
 $('#text2').fadeIn(4000);
 //darthpence.fightsyou();
