@@ -75,22 +75,25 @@ this.name = name;
 var darthpence = new Evildoer("Darth Pence");
 var keepfighting
 */
-/*
+
 //asks player if he'll fight; initiates the duel
+//START: NOT WORKING****
 darthpence.fightsyou = function(){
-if(radio()) {
-$('#text2').fadeOut('fast');
+$('input[type=radio]').click(function(){
+//PLAYER PICKS Y
+if(radio('radio2')) {
+$('#text2').hide();
 //fightoutcome();
 }
 //PLAYER PICKS N*********
 else {
-$('#text2').hide(function(){
+$('#text2').hide();
 $('#text6').fadeIn(4000);
-});
-//darthtrump.showdown();
-}
 };
-*/
+//darthtrump.showdown();
+});
+};
+
 
 //returns true or false based on button chosen
 var radio = function(key) {
@@ -110,7 +113,7 @@ $('input[type=radio]').click(function(){
 if (radio('radio1')) {
 $('#text1').hide();
 $('#text2').fadeIn(4000);
-//darthpence.fightsyou();
+darthpence.fightsyou();
 }
 else  {
 alert("OK, Click refresh when you are ready, Young Jedi.");
