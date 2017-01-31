@@ -68,20 +68,21 @@ voter.decides = function() {
 
 */
 $(document).ready(function(){
-/*
+
 function Evildoer(name) {
 this.name = name;
 }
-var darthpence = new Evildoer("Darth Pence");
 var keepfighting
-*/
+
+var darthpence = new Evildoer("Darth Pence");
+
+
 
 //asks player if he'll fight; initiates the duel
-//START: NOT WORKING****
 darthpence.fightsyou = function(){
-$('input[type=radio]').click(function(){
+$("#radio3, #radio4").click(function(){
 //PLAYER PICKS Y
-if(radio('radio2')) {
+if(radio('radio3')) {
 $('#text2').hide();
 //fightoutcome();
 }
@@ -89,9 +90,10 @@ $('#text2').hide();
 else {
 $('#text2').hide();
 $('#text6').fadeIn(4000);
-};
+}
 //darthtrump.showdown();
 });
+
 };
 
 
@@ -109,7 +111,7 @@ return false;
 
 //LAUNCHES GAME, TELLS YOU MAIN PLOT
 function newGame () {
-$('input[type=radio]').click(function(){
+$("#radio1, #radio2").click(function(){
 if (radio('radio1')) {
 $('#text1').hide();
 $('#text2').fadeIn(4000);
