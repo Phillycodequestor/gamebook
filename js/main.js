@@ -72,7 +72,7 @@ $(document).ready(function(){
 function Evildoer(name) {
 this.name = name;
 }
-var keepfighting
+var keepfighting = true;
 
 var darthpence = new Evildoer("Darth Pence");
 
@@ -84,7 +84,7 @@ $("#radio3, #radio4").click(function(){
 //PLAYER PICKS Y
 if(radio('radio3')) {
 $('#text2').hide();
-//fightoutcome();
+fightoutcome();
 }
 //PLAYER PICKS N*********
 else {
@@ -122,31 +122,34 @@ alert("OK, Click refresh when you are ready, Young Jedi.");
 }
 });
 };
-/*
+
 //calls randomizer, tells you if you won, lost, have option to retreat (calls fightorflight())
 var fightoutcome = function(){
 while(keepfighting){
 var number = randomizer();
 //PLAYER LOSES DUEL
 if (number < 4){
+keepfighting = false;
 playerloses();
 }
 //PLAYER WINS DUEL
 else if (number > 3  && number < 8) {
 $('#text4').delay(800).fadeIn(4000);
-princess.free = true;
+//princess.free = true;
 keepfighting = false;
 }
 //PLAYER GIVEN OPTION TO RETREAT
 else {
 $('#text5').delay(800).fadeIn(4000);
 keepfighting = fightorflight();
+//START HERE: NO RESPONSE WHEN YES CLICKED; CALLING FUNCTION?
 }
 }
 //darthtrump.showdown();
+
 };
-*/
-/*
+
+
 //code to pick random number, returns it to fightoutcome function,
 var randomizer = function() {
 return Math.floor((Math.random() * 10) + 1);
@@ -158,17 +161,17 @@ $('#text3').delay(800).fadeIn(4000);
 
 //returns true or false to fightoutcome based on whether player chooses to keep fighting
 var fightorflight = function() {
-if(radio()){
+$("#radio5, #radio6").click(function(){
+if(radio('radio5')){
 return true;
 }
 else {
-$('#text5').hide(function(){
+$('#text5').hide();
 $('#text6').fadeIn(4000);
-});
-return false;
 }
+});
 }; 
-*/
+
 newGame();
 
 });
