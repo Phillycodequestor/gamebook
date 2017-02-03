@@ -126,6 +126,7 @@ alert("OK, Click refresh when you are ready, Young Jedi.");
 //calls randomizer, tells you if you won, lost, have option to retreat (calls fightorflight())
 var fightoutcome = function(){
 while(keepfighting){
+/*
 var number = randomizer();
 //PLAYER LOSES DUEL
 if (number < 4){
@@ -138,12 +139,13 @@ $('#text4').delay(800).fadeIn(4000);
 //princess.free = true;
 keepfighting = false;
 }
+*/
 //PLAYER GIVEN OPTION TO RETREAT
-else {
+//else {
 $('#text5').delay(800).fadeIn(4000);
 keepfighting = fightorflight();
-//START HERE: NO RESPONSE WHEN YES CLICKED; CALLING FUNCTION?
-}
+//START HERE: WHY ISN'T LOOP CONTINUING WHEN YOU CHOOSE YES? IS TRUE VALUE FED INTO VARIABLE?
+//}
 }
 //darthtrump.showdown();
 
@@ -163,11 +165,13 @@ $('#text3').delay(800).fadeIn(4000);
 var fightorflight = function() {
 $("#radio5, #radio6").click(function(){
 if(radio('radio5')){
+$('#text5').hide();
 return true;
 }
 else {
 $('#text5').hide();
 $('#text6').fadeIn(4000);
+return false;
 }
 });
 }; 
