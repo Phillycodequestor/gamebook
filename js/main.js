@@ -67,12 +67,13 @@ voter.decides = function() {
 };
 
 */
+var keepfighting = true;
 $(document).ready(function(){
 
 function Evildoer(name) {
 this.name = name;
 }
-var keepfighting = true;
+
 
 var darthpence = new Evildoer("Darth Pence");
 
@@ -126,7 +127,6 @@ alert("OK, Click refresh when you are ready, Young Jedi.");
 //calls randomizer, tells you if you won, lost, have option to retreat (calls fightorflight())
 var fightoutcome = function(){
 while(keepfighting){
-/*
 var number = randomizer();
 //PLAYER LOSES DUEL
 if (number < 4){
@@ -139,16 +139,19 @@ $('#text4').delay(800).fadeIn(4000);
 //princess.free = true;
 keepfighting = false;
 }
-*/
-//PLAYER GIVEN OPTION TO RETREAT
-//else {
-$('#text5').delay(800).fadeIn(4000);
-keepfighting = fightorflight();
-//START HERE: WHY ISN'T LOOP CONTINUING WHEN YOU CHOOSE YES? IS TRUE VALUE FED INTO VARIABLE?
-//}
-}
-//darthtrump.showdown();
 
+//PLAYER GIVEN OPTION TO RETREAT
+else {
+$('#text5').delay(800).fadeIn(4000);
+keepfighting = false;
+}
+}
+$("#radio5, #radio6").click(function(){
+keepfighting = fightorflight();
+fightoutcome();
+//START HERE: NEED TO UNCHECK BUTTON, MAKE SURE REALLY WORKING
+});
+//darthtrump.showdown();
 };
 
 
@@ -163,7 +166,6 @@ $('#text3').delay(800).fadeIn(4000);
 
 //returns true or false to fightoutcome based on whether player chooses to keep fighting
 var fightorflight = function() {
-$("#radio5, #radio6").click(function(){
 if(radio('radio5')){
 $('#text5').hide();
 return true;
@@ -173,7 +175,6 @@ $('#text5').hide();
 $('#text6').fadeIn(4000);
 return false;
 }
-});
 }; 
 
 newGame();
