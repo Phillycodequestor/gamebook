@@ -1,13 +1,4 @@
-//$('.container').css({opacity: 0, display: 'flex'}).animate({opacity: 1}, 1000);
-
-
 /*
-function Evildoer(name) {
-this.name = name;
-}
-
-var darthtrump = new Evildoer("Darth Trump");
-var darthpence = new Evildoer("Darth Pence");
 var christiethehutt = new Evildoer("Christie the Hutt");
 
 var princess = new Object();
@@ -72,12 +63,10 @@ $(document).ready(function(){
 
 function Evildoer(name) {
 this.name = name;
-}
-
+};
 
 var darthpence = new Evildoer("Darth Pence");
-
-
+var darthtrump = new Evildoer("Darth Trump");
 
 //asks player if he'll fight; initiates the duel
 darthpence.fightsyou = function(){
@@ -94,9 +83,7 @@ $('#text6').fadeIn(4000);
 }
 //darthtrump.showdown();
 });
-
 };
-
 
 //returns true or false based on button chosen
 var radio = function(key) {
@@ -139,27 +126,25 @@ $('#text4').delay(800).fadeIn(4000);
 //princess.free = true;
 keepfighting = false;
 }
-
 //PLAYER GIVEN OPTION TO RETREAT
 else {
-$('#text5').delay(800).fadeIn(4000);
+$('#text5').fadeIn(4000);
 keepfighting = false;
 }
-}
+};
 $("#radio5, #radio6").click(function(){
 keepfighting = fightorflight();
+document.getElementById("radio5").checked = false;
 fightoutcome();
-//START HERE: NEED TO UNCHECK BUTTON, MAKE SURE REALLY WORKING
 });
 //darthtrump.showdown();
+//START HERE  ADVANCE THE GAME
 };
-
 
 //code to pick random number, returns it to fightoutcome function,
 var randomizer = function() {
 return Math.floor((Math.random() * 10) + 1);
 };
-
 var playerloses = function() {
 $('#text3').delay(800).fadeIn(4000);
 };
@@ -178,7 +163,6 @@ return false;
 }; 
 
 newGame();
-
 });
 
 
