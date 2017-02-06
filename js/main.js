@@ -80,13 +80,13 @@ fightoutcome();
 else {
 $('#text2').hide();
 $('#text6').fadeIn(4000);
+darthtrump.showdown();
 }
-//darthtrump.showdown();
 });
 };
 
 //returns true or false based on button chosen
-var radio = function(key) {
+var radio = function(key){
 var buttonId = key;
 var x = document.getElementById(buttonId).checked;
 if(x){
@@ -122,9 +122,10 @@ playerloses();
 }
 //PLAYER WINS DUEL
 else if (number > 3  && number < 8) {
-$('#text4').delay(800).fadeIn(4000);
+$('#text4').fadeIn(4000);
 //princess.free = true;
 keepfighting = false;
+darthtrump.showdown();
 }
 //PLAYER GIVEN OPTION TO RETREAT
 else {
@@ -137,8 +138,10 @@ keepfighting = fightorflight();
 document.getElementById("radio5").checked = false;
 fightoutcome();
 });
-//darthtrump.showdown();
-//START HERE  ADVANCE THE GAME
+};
+
+darthtrump.showdown = function(){
+//START HERE TEST JQUERY UI LINK; MAKE MESSAGE EXPLODE ON BUTTON CLICK
 };
 
 //code to pick random number, returns it to fightoutcome function,
