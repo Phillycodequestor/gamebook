@@ -125,7 +125,11 @@ else if (number > 3  && number < 8) {
 $('#text4').fadeIn(4000);
 //princess.free = true;
 keepfighting = false;
-darthtrump.showdown();
+$('#button').click(function(){
+$('#text4').hide("explode");
+//darthtrump.showdown();
+//START HERE NOT EXPLODING, NEED PROPER LINK TO UI  
+});
 }
 //PLAYER GIVEN OPTION TO RETREAT
 else {
@@ -141,6 +145,7 @@ fightoutcome();
 };
 
 darthtrump.showdown = function(){
+	
 //START HERE TEST JQUERY UI LINK; MAKE MESSAGE EXPLODE ON BUTTON CLICK
 };
 

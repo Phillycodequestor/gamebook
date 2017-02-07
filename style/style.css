@@ -23,6 +23,14 @@ margin-right: auto;
 margin-left: auto;
 }
 
+button {
+width: 18%;
+font-size: 1.25em;
+display: block;
+margin-right: auto;
+margin-left: auto;	
+}
+
 #photo {
 display: flex;
 height: 300px;
