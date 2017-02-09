@@ -58,7 +58,7 @@ voter.decides = function() {
 };
 
 */
-var keepfighting = true;
+var keepfighting = true; 
 $(document).ready(function(){
 
 function Evildoer(name) {
@@ -128,16 +128,14 @@ keepfighting = false;
 $('#button').click(function(){
 $('#text4').hide("explode");
 //darthtrump.showdown();
-//START HERE NOT EXPLODING, NEED PROPER LINK TO UI  
 });
 }
 //PLAYER GIVEN OPTION TO RETREAT
-else {
 $('#text5').fadeIn(4000);
 keepfighting = false;
-}
 };
 $("#radio5, #radio6").click(function(){
+//START HERE RADIO BUTTON APPEARS FALSE SECOND TIME YOU CLICK YES; FIGHTORFLIGHT APPARENTLY NOT RETURNING FALSE VALUE
 keepfighting = fightorflight();
 document.getElementById("radio5").checked = false;
 fightoutcome();
@@ -146,7 +144,7 @@ fightoutcome();
 
 darthtrump.showdown = function(){
 	
-//START HERE TEST JQUERY UI LINK; MAKE MESSAGE EXPLODE ON BUTTON CLICK
+
 };
 
 //code to pick random number, returns it to fightoutcome function,
@@ -154,7 +152,7 @@ var randomizer = function() {
 return Math.floor((Math.random() * 10) + 1);
 };
 var playerloses = function() {
-$('#text3').delay(800).fadeIn(4000);
+$('#text3').fadeIn(4000);
 };
 
 //returns true or false to fightoutcome based on whether player chooses to keep fighting
