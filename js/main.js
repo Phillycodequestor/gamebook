@@ -114,6 +114,7 @@ alert("OK, Click refresh when you are ready, Young Jedi.");
 //calls randomizer, tells you if you won, lost, have option to retreat (calls fightorflight())
 var fightoutcome = function(){
 while(keepfighting){
+document.getElementById("radio5").checked = false;
 var number = randomizer();
 //PLAYER LOSES DUEL
 if (number < 4){
@@ -131,21 +132,19 @@ $('#text4').hide("explode");
 });
 }
 //PLAYER GIVEN OPTION TO RETREAT
+else {
 $('#text5').fadeIn(4000);
 keepfighting = false;
+}
 };
 $("#radio5, #radio6").click(function(){
-//START HERE RADIO BUTTON APPEARS FALSE SECOND TIME YOU CLICK YES; FIGHTORFLIGHT APPARENTLY NOT RETURNING FALSE VALUE
+//START HERE Will radio button reflect correct value if called twice?
 keepfighting = fightorflight();
-document.getElementById("radio5").checked = false;
 fightoutcome();
 });
 };
 
-darthtrump.showdown = function(){
-	
-
-};
+//darthtrump.showdown = function(){};
 
 //code to pick random number, returns it to fightoutcome function,
 var randomizer = function() {
