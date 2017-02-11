@@ -58,7 +58,7 @@ voter.decides = function() {
 };
 
 */
-var keepfighting = true; 
+ 
 $(document).ready(function(){
 
 function Evildoer(name) {
@@ -113,8 +113,9 @@ alert("OK, Click refresh when you are ready, Young Jedi.");
 
 //calls randomizer, tells you if you won, lost, have option to retreat (calls fightorflight())
 var fightoutcome = function(){
-while(keepfighting){
+
 document.getElementById("radio5").checked = false;
+/*
 var number = randomizer();
 //PLAYER LOSES DUEL
 if (number < 4){
@@ -131,16 +132,20 @@ $('#text4').hide("explode");
 //darthtrump.showdown();
 });
 }
+*/
 //PLAYER GIVEN OPTION TO RETREAT
-else {
+//else {
 $('#text5').fadeIn(4000);
-keepfighting = false;
-}
-};
-$("#radio5, #radio6").click(function(){
-//START HERE Will radio button reflect correct value if called twice?
-keepfighting = fightorflight();
+
+//}
+$("#radio5").click(function(){
+$('#text5').hide();
+//$("[id=radio5]").removeAttr("checked");
 fightoutcome();
+});
+$("#radio6").click(function(){
+$('#text5').hide();
+$('#text6').fadeIn(4000);
 });
 };
 
