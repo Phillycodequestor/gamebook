@@ -1,11 +1,10 @@
+
+
 /*
 var princess = new Object();
 princess.name = "Princess Hillarleia";
 princess.free = false;
 
-
-
-//Evaluates whether you beat Pence and freed princess//
 darthtrump.showdown = function() {
 if (princess.free === true){
 darthtrump.finalchallenge();
@@ -18,7 +17,7 @@ Call randomizer here to determine if game will continue
 //Executes the final challenge, calls the decides method
 darthtrump.finalchallenge = function() {
 May or may not need this
-	};
+};
 
 */
  
@@ -96,8 +95,10 @@ else if (number > 3  && number < 8) {
 $('#text4').fadeIn(4000);
 //princess.free = true;
 $('#button').click(function(){
-$('#text4').hide("explode", {pieces: 32}, 2000);
-//darthtrump.showdown();
+$('#text4').hide("explode", {pieces: 64}, 600, function(){
+$('#text8').fadeIn(12000);
+//START HERE fade out text8
+});
 });
 }
 //PLAYER GIVEN OPTION TO RETREAT
@@ -105,8 +106,6 @@ else {
 $('#text5').fadeIn(4000);
 }
 };
-
-//darthtrump.showdown = function(){};
 
 //code to pick random number, returns it to fightoutcome function,
 var randomizer = function() {
