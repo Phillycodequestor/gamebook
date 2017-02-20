@@ -23,7 +23,7 @@ margin-right: auto;
 margin-left: auto;
 }
 
-button {
+.button {
 width: 18%;
 font-size: 1.25em;
 display: block;

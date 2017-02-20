@@ -94,11 +94,14 @@ playerloses();
 else if (number > 3  && number < 8) {
 $('#text4').fadeIn(4000);
 //princess.free = true;
-$('#button').click(function(){
+$('#button1').click(function(){
 $('#text4').hide("explode", {pieces: 64}, 600, function(){
-$('#text8').fadeIn(12000);
-//START HERE fade out text8
+$('#text8').fadeIn(10000);
 });
+});
+$('#button2').click(function(){
+$('#text8').hide("explode", {pieces: 64}, 600);
+//START HERE initiate final challenge
 });
 }
 //PLAYER GIVEN OPTION TO RETREAT
