@@ -32,12 +32,32 @@ $('#text5').hide();
 $('#text6').fadeIn(4000);
 });
 
+//Constructor fo Evildoers
 function Evildoer(name) {
 this.name = name;
 };
-
 var darthpence = new Evildoer("Darth Pence");
 var darthtrump = new Evildoer("Darth Trump");
+//////////
+
+//this code send a Question object to the fact function or alt fact function when button clicked to tell if question was fact or alt fact
+$("#radio7").click(function(){
+fact(qUestion);
+});
+
+function Question(accuracy){
+this.accuracy = accuracy;
+};
+
+var qUestion = new Question(true);
+
+var fact = function(question){
+if(question === true){
+var tally //START FIND SINTAX TO += VARIABLE
+}
+};
+///////////////
+
 
 //asks player if he'll fight; initiates the duel
 darthpence.fightsyou = function(){
@@ -100,8 +120,9 @@ $('#text8').fadeIn(10000);
 });
 });
 $('#button2').click(function(){
-$('#text8').hide("explode", {pieces: 64}, 600);
-//START HERE initiate final challenge
+$('#text8').hide("explode", {pieces: 64}, 600, function(){
+$('#text9').fadeIn(10000);
+});
 });
 }
 //PLAYER GIVEN OPTION TO RETREAT
