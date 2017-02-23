@@ -31,8 +31,9 @@ $("#radio6").click(function(){
 $('#text5').hide();
 $('#text6').fadeIn(4000);
 });
+/////////////////
 
-//Constructor fo Evildoers
+//Constructor for Evildoers
 function Evildoer(name) {
 this.name = name;
 };
@@ -40,20 +41,23 @@ var darthpence = new Evildoer("Darth Pence");
 var darthtrump = new Evildoer("Darth Trump");
 //////////
 
-//this code send a Question object to the fact function or alt fact function when button clicked to tell if question was fact or alt fact
+//this code sends a Question object to the fact function or alt fact function when button clicked to tell if question was fact or alt fact
+/*
 $("#radio7").click(function(){
-fact(qUestion);
+fact(qUestion1);
 });
-
+*/
 function Question(accuracy){
 this.accuracy = accuracy;
 };
-
-var qUestion = new Question(true);
-
+//START see if you can create array of objects 1-7
+for (i=1; i < 7; i++){
+var qUestion[i] = new Question(true);
+};
+//Tests whether question player answered true to actually is true
 var fact = function(question){
-if(question === true){
-var tally //START FIND SINTAX TO += VARIABLE
+if(question.accuracy === true){
+confirm("success");
 }
 };
 ///////////////
