@@ -47,13 +47,18 @@ $("#radio7").click(function(){
 fact(qUestion1);
 });
 */
-function Question(accuracy){
+function Question(accuracy, text, answer){
 this.accuracy = accuracy;
+this.text = text;
+this.answer = answer;
 };
-//START see if you can create array of objects 1-7
-for (i=1; i < 7; i++){
-var qUestion[i] = new Question(true);
-};
+
+//START HERE is this creating array of objects?
+var trueQuestions = [];
+trueQuestions[0] = new Question(true, "some text", "some text");
+//use this line of code to insert text in the question box
+//document.getElementById("text9").innerHTML = xxxx[x];
+
 //Tests whether question player answered true to actually is true
 var fact = function(question){
 if(question.accuracy === true){
