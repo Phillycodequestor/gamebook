@@ -6,10 +6,16 @@ font-size: 100%;
 .container{
 height: auto;
 max-width: 600px;
-margin: 10px auto;
+margin: 30px auto;
 background-color: white;
 padding-top: 10px;
 padding-bottom: 10px;
+}
+
+.buttonContainer{
+height: auto;
+max-width: 600px;
+margin: 40px auto;
 }
 
 .hide{
@@ -24,20 +30,12 @@ margin-left: auto;
 }
 
 .button {
-width: 18%;
+width: 120px;
 font-size: 1.25em;
 display: block;
 margin-right: auto;
 margin-left: auto;	
 }
 
-#photo {
-display: flex;
-height: 300px;
-max-width: 600px;
-margin: 0 auto;
-background: url(http://i650.photobucket.com/albums/uu221/Matt_Zager/trumpvader_zpsrutznl9v.jpg);
-background-size: 100%;
-background-repeat: no-repeat;
-}
+
 
