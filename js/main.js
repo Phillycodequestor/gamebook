@@ -1,6 +1,8 @@
 //START create opening display in html
 $(document).ready(function(){
-
+var openingText = "Choose whether the following statements made by Donald Trump are true or false. Two right out of three wins."
+document.getElementById("text1").innerHTML = openingText;
+$('#button1').css({display: "block"});
 //this code sends a Question object to the fact function or alt fact function when button clicked to tell if question was fact or alt fact
 /*
 $("#radio7").click(function(){
@@ -16,7 +18,7 @@ this.answer = answer;
 var trueQuestions = new Array();
 trueQuestions[0] = new Question(true, "some text", "some text");
 //use this line of code to insert text in the question box
-//document.getElementById("text9").innerHTML = xxxx[x];
+
 
 //Tests whether question player answered true to actually is true
 var fact = function(question){
