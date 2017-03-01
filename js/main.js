@@ -1,8 +1,16 @@
-//START create opening display in html
 $(document).ready(function(){
+var sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor, mi nec convallis sollicitudin, turpis arcu maximus odio, at gravida odio lorem id lacus. Etiam facilisis a lorem vel blandit. Cras consequat massa odio, non sagittis diam fringilla sit amet."
 var openingText = "Choose whether the following statements made by Donald Trump are true or false. Two right out of three wins."
 document.getElementById("text1").innerHTML = openingText;
 $('#button1').css({display: "block"});
+
+//START stop button from exit stage left
+$('#button1').click(function(){
+document.getElementById("text1").innerHTML = sampleText;
+$(this).hide(function(){
+	$('#button2, #button3').css({display:"block"});
+});
+});
 //this code sends a Question object to the fact function or alt fact function when button clicked to tell if question was fact or alt fact
 /*
 $("#radio7").click(function(){
