@@ -11,6 +11,8 @@ displayStatement();
 });
 });
 
+//START need code to stop asking questions at 3
+
 //constructor for false statement objects
 function falseStatement(text, answer, value){
 this.text = text;
@@ -38,24 +40,25 @@ var displayStatement = function(){
 i = randomizer();
 document.getElementById("text1").innerHTML = statement[i].text;
 };
+/////////////////////////////////////////////
 
+//when button clicked, evaluates truthfulness of question
 $("#button2").click(function(){
-trueTest(true, statement[i].value);
+trueTest(true);
 });
-
 $("#button3").click(function(){
-trueTest(false, statement[i].value);
+trueTest(false);
 });
 
-//START not getting correct confirmation
-var trueTest = function(answer, question){
-if(this.answer === this.question){
+var trueTest = function(answer){
+if(answer === statement[i].accuracy){
 confirm("that's right");
 }
 else{
 confirm("that's wrong");
 }
 };
+///////////////////////////////////////////
 
 var randomizer = function() {
 return Math.floor((Math.random() * 10) + 1);
