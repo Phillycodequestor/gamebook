@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+
 var openingText = "Choose whether the following statements made by Donald Trump are true or false. Two right out of three wins."
 document.getElementById("text1").innerHTML = openingText;
 $('#button1').css({display: "block"});
@@ -11,7 +13,7 @@ displayStatement();
 });
 });
 
-//START need code to stop asking questions at 3
+//START prevent repeated questions
 
 //constructor for false statement objects
 function falseStatement(text, answer, value){
@@ -34,8 +36,10 @@ statement[6] = new falseStatement("this is 7","ok",true);
 statement[7] = new falseStatement("this is 8","ok",true);
 statement[8] = new falseStatement("this is 9","ok",true);
 statement[9] = new falseStatement("this is 10","ok",true);
+
+
 //calls randomizer to select a statement
-var i
+
 var displayStatement = function(){
 i = randomizer();
 document.getElementById("text1").innerHTML = statement[i].text;
