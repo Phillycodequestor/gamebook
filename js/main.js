@@ -13,8 +13,6 @@ displayStatement();
 });
 });
 
-//START prevent repeated questions
-
 //constructor for false statement objects
 function falseStatement(text, answer, value){
 this.text = text;
@@ -37,11 +35,12 @@ statement[7] = new falseStatement("this is 8","ok",true);
 statement[8] = new falseStatement("this is 9","ok",true);
 statement[9] = new falseStatement("this is 10","ok",true);
 
-
+//START i values going into array?
 //calls randomizer to select a statement
-
+var used = [];
 var displayStatement = function(){
 i = randomizer();
+used.push(i);
 document.getElementById("text1").innerHTML = statement[i].text;
 };
 /////////////////////////////////////////////
