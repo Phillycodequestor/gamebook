@@ -35,13 +35,18 @@ statement[7] = new falseStatement("this is 8","ok",true);
 statement[8] = new falseStatement("this is 9","ok",true);
 statement[9] = new falseStatement("this is 10","ok",true);
 
-//START i values going into array?
+//START keep playing game to test for duplicates
 //calls randomizer to select a statement
 var used = [];
 var displayStatement = function(){
 i = randomizer();
+if(used.includes(i)){
+displayStatement();
+}
+else{
 used.push(i);
 document.getElementById("text1").innerHTML = statement[i].text;
+}
 };
 /////////////////////////////////////////////
 
@@ -56,9 +61,11 @@ trueTest(false);
 var trueTest = function(answer){
 if(answer === statement[i].accuracy){
 confirm("that's right");
+displayStatement();
 }
 else{
 confirm("that's wrong");
+displayStatement();
 }
 };
 ///////////////////////////////////////////
