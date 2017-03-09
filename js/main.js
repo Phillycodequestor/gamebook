@@ -5,11 +5,11 @@ var openingText = "Choose whether the following statements made by Donald Trump 
 document.getElementById("text1").innerHTML = openingText;
 $('#button1').css({display: "block"});
 
-//Show true and false buttons
+//Show true and false buttons call function to start play
 $('#button1').click(function(){
 $(this).hide(function(){
 $('#button2, #button3').css({display:"block"});
-displayStatement();
+pickStatement();
 });
 });
 
@@ -34,19 +34,22 @@ statement[6] = new falseStatement("this is 7","ok",true);
 statement[7] = new falseStatement("this is 8","ok",true);
 statement[8] = new falseStatement("this is 9","ok",true);
 statement[9] = new falseStatement("this is 10","ok",true);
+statement[10] = new falseStatement("this is 11","ok",true);
 
-//START keep playing game to test for duplicates
-//calls randomizer to select a statement
+
 var used = [];
-var displayStatement = function(){
+var i;
+var pickStatement = function(){
 i = randomizer();
-if(used.includes(i)){
-displayStatement();
-}
-else{
+while(used.includes(i)){
+i = randomizer();	
+};
 used.push(i);
+displayStatement();
+};
+
+var displayStatement = function(){
 document.getElementById("text1").innerHTML = statement[i].text;
-}
 };
 /////////////////////////////////////////////
 
@@ -61,11 +64,11 @@ trueTest(false);
 var trueTest = function(answer){
 if(answer === statement[i].accuracy){
 confirm("that's right");
-displayStatement();
+pickStatement();
 }
 else{
 confirm("that's wrong");
-displayStatement();
+pickStatement();
 }
 };
 ///////////////////////////////////////////

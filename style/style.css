@@ -36,9 +36,9 @@ margin: 40px auto;
 display: none;
 }
 
-p, form {
+p {
 width: 80%;
-font-size: 1.25em;
+font-size: 1.45rem;
 margin-right: auto;
 margin-left: auto;
 }
