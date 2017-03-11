@@ -5,17 +5,33 @@ $('#button1').css({display: "block"});
 
 //Show true and false buttons call function to start play
 $('#button1').click(function(){
-$(this).hide(function(){
+$(this).fadeOut(800, function(){
 $('#button2, #button3, #button4').css({display:"block"});
 pickStatement();
+$("#button4").prop('disabled', true);
 });
 });
 /////////////////////////
 
-//Picks new statement when button clicked
+
+//Next Button: Picks new statement when button clicked, ends game after 3 turns
 $("#button4").click(function(){
+if(used.length < 3){
 pickStatement();
+$("#button2, #button3").prop('disabled', false);
+$("#button4").prop('disabled', true);
+}
+else {
+endGame();
+}
 });
+
+//START display score and outcome
+var endGame = function() {
+$('#button2, #button3, #button4, #box1').fadeOut(500, function(){
+	$("#box2").fadeIn(3000);
+});
+};
 
 //constructor for false statement objects
 function falseStatement(text, answer, value){
@@ -56,19 +72,21 @@ document.getElementById("text1").innerHTML = statement[i].text;
 //when button clicked, evaluates truthfulness of question
 $("#button2").click(function(){
 trueTest(true);
-//START HERE need to disable buttons
-//document.getElementById("#button2").disabled = true;
+$("#button2, #button3").prop('disabled', true);
+$("#button4").prop('disabled', false);
 });
 $("#button3").click(function(){
 trueTest(false);
+$("#button2, #button3").prop('disabled', true);
+$("#button4").prop('disabled', false);
 });
 
 var trueTest = function(answer){
 if(answer === statement[i].accuracy){
-document.getElementById("text1").innerHTML = "That's correct! Click Next to continue";
+document.getElementById("text1").innerHTML = "That's correct!" + " " + statement[i].answer;
 }
 else{
-document.getElementById("text1").innerHTML = "That's incorrect! Click Next to continue";
+document.getElementById("text1").innerHTML = "That's incorrect" + " " + statement[i].answer;
 }
 };
 ///////////////////////////////////////////
