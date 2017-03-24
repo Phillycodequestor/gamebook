@@ -1,12 +1,12 @@
 body {
 background: url(http://i650.photobucket.com/albums/uu221/Matt_Zager/maxresdefault_zpsuwebophu.jpg);
-font-size: 100%;
+
 }
 
 h1, h3 {
 color: yellow;
 text-align: center;
-font-size: 3em;
+font-size: 7.5em;
 }
 
 h1 {
@@ -39,9 +39,10 @@ display: none;
 
 p {
 width: 80%;
-font-size: 1.45rem;
+font-size: 1.55em;
 margin-right: auto;
 margin-left: auto;
+font-family: 'Open Sans', sans-serif;
 }
 
 .button {
@@ -54,3 +55,8 @@ margin-left: auto;
 
 
 
+@media only screen and (max-width: 500px){
+	p {
+font-size: 30px;
+	}
+}
