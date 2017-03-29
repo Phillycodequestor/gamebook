@@ -1,15 +1,26 @@
 $(document).ready(function(){
+
+//Display introduction to game
+var startGame = function (){
 var openingText = "Choose whether the following political claims are true or false. Two right out of three wins."
 document.getElementById("text1").innerHTML = openingText;
-$('#button1').css({display: "block"});
+$('#button1, h1, h3').toggle();
+/////////////////////////
+};
+
+$('#button5').click(function(){
+$(this).toggle();
+used.length = 0;
+correct = 0;
+startGame();
+});
 
 //Show true and false buttons call function to start play
 $('#button1').click(function(){
-$('#openingBox').fadeOut(800, function(){
+$(this).toggle()
+$('h1, h3').toggle();
 $('#button2, #button3').toggle();
 pickStatement();
-//$("#button4").prop('disabled', true);
-});
 });
 /////////////////////////
 
@@ -28,15 +39,14 @@ endGame();
 
 //display score and outcome
 var endGame = function() {
-$('#button2, #button3, #button4, #box1').fadeOut(500, function(){
-$("#box2").fadeIn(3000);
+$('#button4, #button5').toggle();
 if(correct > 1){
-document.getElementById("text2").innerHTML = "You got" + " " + correct + " " + "right. You win!";
+document.getElementById("text1").innerHTML = "You got" + " " + correct + " " + "right. You win!";
 }
 else{
-document.getElementById("text2").innerHTML = "You got" + " " + correct + " " + "right. You lose!";
+document.getElementById("text1").innerHTML = "You got" + " " + correct + " " + "right. You lose!";
 }
-});
+
 };
 
 //constructor for false statement objects
@@ -103,6 +113,7 @@ var randomizer = function() {
 return Math.floor((Math.random() * 10) + 1);
 };
 
+startGame();
 });
 
 

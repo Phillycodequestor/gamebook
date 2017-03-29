@@ -11,10 +11,12 @@ font-family: 'Open Sans', sans-serif;
 
 h1 {
 margin-bottom: 1px;
+display: none;
 }
 
 h3 {
-margin-top: 1px;	
+margin-top: 1px;
+display: none;	
 }
 
 .container{
