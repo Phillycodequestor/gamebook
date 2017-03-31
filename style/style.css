@@ -1,5 +1,14 @@
 body {
-background: url(https://i650.photobucket.com/albums/uu221/Matt_Zager/maxresdefault_zpsuwebophu.jpg);
+background-image: url(https://i650.photobucket.com/albums/uu221/Matt_Zager/maxresdefault_zpsuwebophu.jpg);
+
+
+/*
+no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+       -o-background-size: cover;
+	background-size: cover;
+*/
 }
 
 h1, h3 {
@@ -62,4 +71,4 @@ margin-left: auto;
 	p {
 font-size: 20px;
 	}
-}
+	}
