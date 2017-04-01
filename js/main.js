@@ -41,10 +41,10 @@ endGame();
 var endGame = function() {
 $('#button4, #button5').toggle();
 if(correct > 1){
-document.getElementById("text1").innerHTML = "You got" + " " + correct + " " + "right. You win!";
+document.getElementById("text1").innerHTML = "You got" + " " + correct + " " + "right. You win! <br /> <br /> Sources: " + "<a  target='_blank' href='http://factcheck.org'>factcheck.org,</a>" + " " + "<a target='_blank' href='http://politifact.com'>politifact.com,</a>" + " " + "<a target='_blank' href='https://www.thestar.com/news/world/uselection/2016/11/04/donald-trump-the-unauthorized-database-of-false-things.html#analysis'>The Toronto Star</a>";
 }
 else{
-document.getElementById("text1").innerHTML = "You got" + " " + correct + " " + "right. You lose!";
+document.getElementById("text1").innerHTML = "You got" + " " + correct + " " + "right. You lose! <br /> <br /> Sources: " + "<a  target='_blank' href='http://factcheck.org'>factcheck.org,</a>" + " " + "<a target='_blank' href='http://politifact.com'>politifact.com,</a>" + " " + "<a target='_blank' href='https://www.thestar.com/news/world/uselection/2016/11/04/donald-trump-the-unauthorized-database-of-false-things.html#analysis'>The Toronto Star</a>";
 }
 
 };

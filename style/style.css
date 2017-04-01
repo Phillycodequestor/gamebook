@@ -1,14 +1,5 @@
 body {
-background-image: url(https://i650.photobucket.com/albums/uu221/Matt_Zager/maxresdefault_zpsuwebophu.jpg);
-
-
-/*
-no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-       -o-background-size: cover;
-	background-size: cover;
-*/
+background-color: black;
 }
 
 h1, h3 {
@@ -21,6 +12,7 @@ font-family: 'Open Sans', sans-serif;
 h1 {
 margin-bottom: 1px;
 display: none;
+
 }
 
 h3 {
@@ -43,10 +35,15 @@ max-width: 600px;
 margin: 40px auto;
 display: flex;
 justify-content: space-between;
+
 }
 
 .hide{
 display: none;
+}
+
+a{
+text-decoration: none;
 }
 
 p {
@@ -70,5 +67,9 @@ margin-left: auto;
 @media screen and (max-width: 500px){
 	p {
 font-size: 20px;
+	}
+
+	.button{
+		height: auto;
 	}
 	}
