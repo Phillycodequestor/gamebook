@@ -34,7 +34,6 @@ max-width: 600px;
 margin: 40px auto;
 display: flex;
 justify-content: space-between;
-
 }
 
 .hide{
@@ -54,11 +53,15 @@ font-family: 'Open Sans', sans-serif;
 }
 
 .button {
-width: 165px;
+width: 120px;
 font-size: 1.25em;
 display: none;
 margin-right: auto;
 margin-left: auto;
+}
+
+#button1, #button5 {
+width: 155px;
 }
 
 
