@@ -69,15 +69,31 @@ statement[8] = new falseStatement("Louisiana is losing a football field of land 
 statement[9] = new falseStatement("Former head of the U.S. Agency for International Development Raj Shah: Most U.S. foreign assistance no longer even goes to foreign governments. It is given to U.S. companies and nonprofits in the form of contracts and grants","The nonpartisan research arm of Congress reported in 2015 that only 4 percent of USAID assistance goes directly to foreign governments.",true);
 statement[10] = new falseStatement("Donald Trump: In the first two job reports since I took the oath of office, we’ve already added nearly half a million new jobs.","The Bureau of Labor Statistics measures payrolls as of the week containing the 12th day of the month. Trump wasn’t sworn in until Jan. 20.",false);
 
-//picks object index; filters repeat statements
-var used = [];
-var i;
-var pickStatement = function(){
-i = randomizer();
+
+/*
 while(used.includes(i)){
 i = randomizer();	
 };
+*/
+//picks object index; filters repeat statements
+var used = [];
+var i;
+var truth = true;
+var pickStatement = function(){
+while(truth){
+i = randomizer();
+for( var m = 0; m <= used.length; m++){
+if(used[m] === i){
+truth = true;
+break;
+}
+else{
+truth = false;
+}
+};
+};
 used.push(i);
+truth = true;
 displayStatement();
 };
 
