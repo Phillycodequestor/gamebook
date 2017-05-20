@@ -1,7 +1,9 @@
+//add a stopper when array gets full
 $(document).ready(function(){
 
 //Display introduction to game
 var startGame = function (){
+plays = 0;
 var openingText = "Choose whether the following political claims are true or false. Two right out of three wins."
 document.getElementById("text1").innerHTML = openingText;
 $('#button1, h1, h3').toggle();
@@ -10,9 +12,14 @@ $('#button1, h1, h3').toggle();
 
 $('#button5').click(function(){
 $(this).toggle();
-used.length = 0;
+plays = 0;
 correct = 0;
+if(used.length < 9){
 startGame();
+}
+else {
+	alert("We have run out of questions. Thanks for helping me test this prototype.");
+}
 });
 
 //Show true and false buttons call function to start play
@@ -27,7 +34,7 @@ pickStatement();
 
 //Next Button: Picks new statement when button clicked, ends game after 3 turns
 $("#button4").click(function(){
-if(used.length < 3){
+if(plays < 3){
 pickStatement();
 $("#button2, #button3").toggle();
 $("#button4").toggle();
@@ -76,6 +83,7 @@ i = randomizer();
 };
 */
 //picks object index; filters repeat statements
+var plays
 var used = [];
 var i;
 var truth = true;
@@ -94,6 +102,7 @@ truth = false;
 };
 used.push(i);
 truth = true;
+plays++;
 displayStatement();
 };
 
